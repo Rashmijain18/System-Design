@@ -63,6 +63,16 @@ For each key, you choose one type (string, list, set, hash, sorted set, etc.), a
 
 So you always have a key, but what the key points to is often more complex than a plain scalar value.
 
+## Best Practices for Redis Caching
+
+It is important to consider a few best practices when working with Redis caching:
+
+- Identify the Right Data to Cache: Not all data needs to be cached. Focus on caching data that is frequently accessed or computationally expensive to generate. This includes data that doesn't change frequently or can be shared across multiple requests.
+- Set Expiration Policies: Determine an appropriate expiration policy for cached data. This ensures that the cache remains up to date and avoids serving stale data. Set expiration times based on the frequency of data updates and the desired freshness of the cached data.
+- Implement Cache Invalidation: When the underlying data changes, it is essential to invalidate or update the corresponding cache entries. This can be done by using techniques such as cache invalidation triggers or monitoring changes in the data source.
+- Monitor Cache Performance: Regularly monitor the performance of the cache to ensure its effectiveness. Keep an eye on cache hit rates, cache misses, and overall cache utilization. Monitoring can help identify potential bottlenecks or areas for optimization.
+- Scale Redis for High Traffic: As your application's traffic grows, consider scaling Redis to handle the increased load. This can involve using Redis clusters or replication to distribute the data across multiple instances and increase read and write throughput.
+
 ## Scalability
 
 - **Replication**: Master-slave for high availability.
@@ -115,3 +125,15 @@ So you always have a key, but what the key points to is often more complex than 
    pool = redis.ConnectionPool(host='localhost', port=6379, db=0)
    r = redis.Redis(connection_pool=pool)
    ```
+
+## How to check if Redis is running in Docker:
+
+Run this command in your terminal to connect to Redis CLI inside the Docker container:
+docker exec -it redis-server redis-cli
+
+Once inside the Redis CLI, you can type commands like:
+ping
+It should reply with PONG.
+
+To see keys stored in Redis:
+keys \*
