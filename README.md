@@ -1,177 +1,257 @@
-## How to use this list
+# 📘 System Design – Complete Study Plan (with Exercises)
 
-Start at the top and move down. Tackle core items first, then return to advanced topics and operational concerns. Time estimates assume part-time study (5–10 hours/week).
+> ✅ Covers fundamentals → production → real-world gaps
+> ✅ Exercises included for **active learning**
+> ✅ Optimized for interviews + real systems
 
-## Full topic list (ordered, with notes & exercises)
+---
 
-1. High-level principles (priority: high, 1 week)
+## Phase 0: Foundations & Design Thinking
 
-   - Concepts: scalability, availability, fault tolerance, reliability, latency vs throughput, trade-offs.
-   - Exercise: explain trade-offs for a read-heavy vs write-heavy app.
+> Goal: Learn how to think like a system designer
 
-2. Requirement gathering and design process (high, 1–2 days)
+- [ ] **High-level principles**
+      _Concepts:_ scalability, availability, reliability, fault tolerance, latency vs throughput
+      _Exercise:_ Explain trade-offs for a **read-heavy vs write-heavy** system.
 
-   - Techniques: clarify, scope, constraints, SLA/SLI/SLO.
-   - Exercise: write functional and non-functional requirements for a URL shortener.
+- [ ] **Requirement gathering & design process**
+      _Concepts:_ functional vs non-functional, constraints, SLA / SLI / SLO
+      _Exercise:_ Write requirements for a **URL shortener**.
 
-3. Networking fundamentals (high, 1 week)
+- [ ] **Design documentation & communication**
+      _Concepts:_ design docs, diagrams, ADRs, reviews
+      _Exercise:_ Write a **1-page design doc** for a notification system.
 
-   - Topics: TCP/IP, DNS, HTTP/HTTPS, TLS, TCP vs UDP, ports, proxies, NAT.
-   - Exercise: trace an HTTP request end-to-end and identify latency sources.
+- [ ] **User experience in distributed systems**
+      _Concepts:_ latency perception, errors, graceful degradation
+      _Exercise:_ Design UX behavior when a dependency is slow or down.
 
-4. Load balancing and proxies (high, 3 days)
+---
 
-   - Topics: L4 vs L7, sticky sessions, reverse proxy, HAProxy, Nginx, health checks.
-   - Exercise: design LB strategy for global services.
+## Phase 1: Networking & Traffic Management
 
-5. Caching (high, 1 week)
+> Goal: Understand request flow end-to-end
 
-   - Topics: CDN, browser cache, edge caching, origin cache, in-memory caches (Redis/Memcached), eviction policies, cache invalidation.
-   - Exercise: design a caching layer for user profiles and explain invalidation.
+- [ ] **Networking fundamentals**
+      _Concepts:_ TCP/IP, DNS, HTTP/HTTPS, TLS, TCP vs UDP, NAT, proxies
+      _Exercise:_ Trace an HTTP request and identify latency sources.
 
-6. Databases: fundamentals (high, 2 weeks)
+- [ ] **Load balancing & proxies**
+      _Concepts:_ L4 vs L7, sticky sessions, health checks
+      _Exercise:_ Design a global load-balancing strategy.
 
-   - Topics: SQL vs NoSQL, normalization, indexes, transactions, ACID, BASE.
-   - Exercise: choose DB for an e-commerce order system and justify.
+- [ ] **API gateway & service mesh**
+      _Concepts:_ centralized auth, retries, traffic shaping
+      _Exercise:_ Design API gateway rules for 10 microservices.
 
-7. Replication and consistency (high, 1 week)
+- [ ] **Rate limiting & throttling**
+      _Concepts:_ token bucket, leaky bucket, distributed counters
+      _Exercise:_ Design rate limiting with burst tolerance.
 
-   - Topics: master-slave, multi-master, consensus (Paxos, Raft basics), eventual vs strong consistency.
-   - Exercise: design a replicated leader-follower DB with failover.
+---
 
-8. Partitioning / Sharding (high, 1 week)
+## Phase 2: Data Storage & Modeling
 
-   - Topics: horizontal vs vertical scaling, sharding keys, re-sharding, consistent hashing.
-   - Exercise: shard a user table and handle rebalancing.
+> Goal: Choose and model data correctly
 
-9. Data modeling & schema design (high, 3–4 days)
+- [ ] **Databases: fundamentals**
+      _Concepts:_ SQL vs NoSQL, ACID, BASE, indexes
+      _Exercise:_ Choose DBs for an **e-commerce order system**.
 
-   - Topics: choosing the right model for access patterns, denormalization, wide-column stores.
-   - Exercise: model schema for time-series metrics.
+- [ ] **Data modeling & schema design**
+      _Concepts:_ access patterns, denormalization
+      _Exercise:_ Model schema for **time-series metrics**.
 
-10. Indexing and search (medium, 1 week)
+- [ ] **Indexing & search**
+      _Concepts:_ inverted index, ranking, sharding
+      _Exercise:_ Design search for an article platform.
 
-    - Topics: inverted index, full-text search, Elasticsearch, sharding/search ranking.
-    - Exercise: design search for an article site.
+- [ ] **Storage systems & object stores**
+      _Concepts:_ S3, multipart upload, consistency
+      _Exercise:_ Design large file upload/download service.
 
-11. Message queues and streaming (high, 1 week)
+- [ ] **Metadata, tagging & searchability**
+      _Concepts:_ faceted search, query planning
+      _Exercise:_ Design tag-based search for a photo app.
 
-    - Topics: queue vs pub/sub, Kafka, RabbitMQ, SQS, ordering, retention, partitioning.
-    - Exercise: design an event pipeline for analytics ingestion.
+---
 
-12. Asynchronous processing & background jobs (medium, 3–4 days)
+## Phase 3: Scalability, Performance & Caching
 
-    - Topics: workers, retries, idempotency, dead-letter queues.
-    - Exercise: build a retry/backoff strategy for failed jobs.
+> Goal: Handle scale efficiently
 
-13. Microservices & service-oriented architecture (medium, 1 week)
+- [ ] **Caching**
+      _Concepts:_ CDN, Redis, eviction, invalidation
+      _Exercise:_ Design caching for user profiles.
 
-    - Topics: service boundaries, API contracts, service discovery, versioning, fallbacks.
-    - Exercise: split a monolith into microservices and design inter-service communication.
+- [ ] **Capacity planning & scaling**
+      _Concepts:_ RPS math, bottlenecks
+      _Exercise:_ Estimate servers needed for X RPS.
 
-14. APIs & API design (high, 3–4 days)
+- [ ] **Performance engineering**
+      _Concepts:_ profiling, benchmarking, load testing
+      _Exercise:_ Identify bottlenecks from load-test results.
 
-    - Topics: REST vs gRPC, design principles, pagination, rate limiting, versioning.
-    - Exercise: design a REST API for posts with pagination and rate limits.
+- [ ] **CDN & edge computing**
+      _Concepts:_ signed URLs, edge logic
+      _Exercise:_ Design media delivery with CDN.
 
-15. Consistency patterns (medium, 3 days)
+---
 
-    - Topics: read-after-write, session consistency, causal consistency, monotonic reads.
-    - Exercise: implement eventual consistency example and handle stale reads.
+## Phase 4: Distributed Systems & Consistency
 
-16. Concurrency & distributed systems basics (high, 1 week)
+> Goal: Build correct distributed systems
 
-    - Topics: race conditions, distributed locks, leader election, consensus.
-    - Exercise: design a distributed lock using Redis or ZooKeeper.
+- [ ] **Replication & consistency**
+      _Concepts:_ leader-follower, multi-leader, Raft basics
+      _Exercise:_ Design replicated DB with failover.
 
-17. Rate limiting & throttling (medium, 2–3 days)
+- [ ] **Partitioning / sharding**
+      _Concepts:_ sharding keys, rebalancing
+      _Exercise:_ Shard a user table and handle growth.
 
-    - Topics: token bucket, leaky bucket, distributed counters.
-    - Exercise: implement rate limiter design for API with burst tolerance.
+- [ ] **Consistency patterns**
+      _Concepts:_ eventual, session, causal
+      _Exercise:_ Handle stale reads in an eventually consistent system.
 
-18. Security basics (high, ongoing)
+- [ ] **Concurrency & distributed systems basics**
+      _Concepts:_ locks, leader election
+      _Exercise:_ Design distributed lock using Redis/ZooKeeper.
 
-    - Topics: authentication (OAuth, JWT), authorization, encryption at rest/in transit, secrets management.
-    - Exercise: design auth flow for third-party API.
+- [ ] **Advanced distributed algorithms (optional)**
+      _Concepts:_ CRDTs, vector clocks
+      _Exercise:_ Build simple CRDT for collaborative edits.
 
-19. Data durability & backups (medium, 2–3 days)
+---
 
-    - Topics: backups, snapshots, point-in-time recovery, archival.
-    - Exercise: plan backup and restore for a transactional DB.
+## Phase 5: Async & Event-Driven Architectures
 
-20. Observability & monitoring (high, 1 week)
+> Goal: Decouple systems
 
-    - Topics: metrics, logs, tracing (OpenTelemetry, Jaeger), SLIs/SLOs/SLAs, alerting.
-    - Exercise: define SLIs and alerts for an API service.
+- [ ] **Message queues & streaming**
+      _Concepts:_ Kafka, pub/sub, ordering
+      _Exercise:_ Design analytics ingestion pipeline.
 
-21. Deployment & CI/CD (medium, 1 week)
+- [ ] **Async processing & background jobs**
+      _Concepts:_ retries, idempotency, DLQs
+      _Exercise:_ Design retry + backoff strategy.
 
-    - Topics: pipelines, containerization, Docker, Kubernetes basics, blue/green, canary deployments.
-    - Exercise: design deploy strategy for zero-downtime releases.
+- [ ] **Event-driven architectures**
+      _Concepts:_ Sagas, CQRS, event sourcing
+      _Exercise:_ Design payment workflow using Saga.
 
-22. Capacity planning & scaling (high, 3–4 days)
+- [ ] **Data migration strategies**
+      _Concepts:_ live migration, schema evolution
+      _Exercise:_ Plan zero-downtime DB migration.
 
-    - Topics: load estimation, throughput calculations, bottleneck identification.
-    - Exercise: estimate servers needed for X RPS and Y payload.
+---
 
-23. Fault tolerance & resiliency patterns (high, 1 week)
+## Phase 6: Microservices & Platform Architecture
 
-    - Topics: circuit breaker, bulkhead, retries with backoff, graceful degradation.
-    - Exercise: apply circuit breaker to a flaky external API call.
+> Goal: Scale teams and systems
 
-24. CDN & edge computing (medium, 3 days)
+- [ ] **Microservices & SOA**
+      _Concepts:_ service boundaries, contracts
+      _Exercise:_ Break monolith into microservices.
 
-    - Topics: CDN caching, signed URLs, edge functions.
-    - Exercise: design media-serving pipeline with CDN and signed access.
+- [ ] **Multi-region architectures**
+      _Concepts:_ geo-replication, latency
+      _Exercise:_ Design active-active global system.
 
-25. Storage systems & object stores (medium, 3–4 days)
+- [ ] **Legacy system integration**
+      _Concepts:_ strangler pattern
+      _Exercise:_ Migrate legacy auth system safely.
 
-    - Topics: S3-like storage, multipart upload, eventual consistency in object stores.
-    - Exercise: design large-file upload and retrieval service.
+- [ ] **Mobile/backend integration**
+      _Concepts:_ offline sync, push notifications
+      _Exercise:_ Design offline-first mobile sync.
 
-26. Graph systems & social graphs (medium, 1 week)
+---
 
-    - Topics: graph databases, adjacency lists, traversals, friend recommendations.
-    - Exercise: design follower/followee storage for a social app.
+## Phase 7: Reliability, Security & Operations
 
-27. Time-series databases and analytics (medium, 4 days)
+> Goal: Run systems safely
 
-    - Topics: TSDBs, rollups, retention policies, OLAP vs OLTP.
-    - Exercise: design metrics store for monitoring.
+- [ ] **Fault tolerance & resiliency patterns**
+      _Concepts:_ circuit breakers, bulkheads
+      _Exercise:_ Protect system from flaky dependency.
 
-28. Metadata, tagging, & searchability (low-medium, 3 days)
+- [ ] **Disaster recovery planning**
+      _Concepts:_ RTO/RPO, DR drills
+      _Exercise:_ Design DR for payment system.
 
-    - Topics: indexing metadata, faceted search, query planning.
-    - Exercise: design tag-based search for photo app.
+- [ ] **Observability & monitoring**
+      _Concepts:_ metrics, logs, tracing
+      _Exercise:_ Define SLIs and alerts.
 
-29. Event-driven architectures & eventual consistency (medium, 1 week)
+- [ ] **Security basics**
+      _Concepts:_ OAuth, JWT, encryption
+      _Exercise:_ Design auth flow for third-party API.
 
-    - Topics: compensation transactions, sagas, event sourcing, CQRS.
-    - Exercise: design payment workflow using saga pattern.
+- [ ] **Data durability & backups**
+      _Concepts:_ PITR, snapshots
+      _Exercise:_ Test restore from backup.
 
-30. Advanced distributed algorithms (low, optional)
+---
 
-    - Topics: Paxos/Raft deep dive, vector clocks, CRDTs.
-    - Exercise: build simple CRDT example for collaborative edits.
+## Phase 8: DevOps, Cloud & Cost
 
-31. Cost optimization & multi-cloud (medium, ongoing)
+> Goal: Ship efficiently
 
-    - Topics: spot instances, autoscaling policies, data transfer costs.
-    - Exercise: estimate monthly cost for your design and propose reductions.
+- [ ] **Deployment & CI/CD**
+      _Concepts:_ Docker, Kubernetes, canary
+      _Exercise:_ Design zero-downtime deploy.
 
-32. Legal, privacy, compliance (low-medium, ongoing)
+- [ ] **Infrastructure as Code (IaC)**
+      _Concepts:_ Terraform, reproducibility
+      _Exercise:_ Model infra as code.
 
-    - Topics: GDPR, data residency, audit logging, retention policies.
-    - Exercise: identify compliance risks for user data storage.
+- [ ] **Cloud-native patterns**
+      _Concepts:_ managed services trade-offs
+      _Exercise:_ Replace self-managed DB with managed DB.
 
-33. Emerging topics (as needed)
+- [ ] **Cost optimization & multi-cloud**
+      _Concepts:_ autoscaling, cost models
+      _Exercise:_ Estimate monthly cloud cost.
 
-    - Topics: edge computing, serverless patterns, WebAssembly at edge, ML infra considerations.
-    - Exercise: evaluate serverless vs containers for a use case.
+- [ ] **Vendor lock-in & exit strategies**
+      _Concepts:_ portability
+      _Exercise:_ Design cloud-agnostic storage.
 
-## Study tips and exercises
+---
 
-- Always start designs by clarifying requirements and numbers.
-- Work backward from access patterns to choose storage and indexing.
-- Build small prototypes (URL shortener, file store, timeline) to cement concepts.
-- Time-box mock interviews and get feedback focusing on trade-offs and clarity.
+## Phase 9: Specialized Systems
+
+- [ ] **Graph systems & social graphs**
+      _Exercise:_ Design follower/followee system.
+
+- [ ] **Time-series databases & analytics**
+      _Exercise:_ Design metrics storage with rollups.
+
+---
+
+## Phase 10: Ethics, Compliance & Sustainability
+
+- [ ] **Legal, privacy & compliance**
+      _Exercise:_ Identify GDPR risks.
+
+- [ ] **Ethics in system design**
+      _Exercise:_ Analyze bias risk in recommendation system.
+
+- [ ] **Green computing & sustainability**
+      _Exercise:_ Reduce energy footprint of architecture.
+
+---
+
+## Phase 11: Real-World Mastery
+
+- [ ] **Real-world case studies**
+      _Exercise:_ Analyze a major outage postmortem.
+
+- [ ] **Team collaboration & reviews**
+      _Exercise:_ Conduct mock design review.
+
+- [ ] **Emerging topics**
+      _Exercise:_ Evaluate serverless vs containers.
+
+---
