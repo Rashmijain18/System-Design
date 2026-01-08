@@ -1,10 +1,4 @@
-# 📘 System Design – Complete Study Plan (with Exercises)
-
-> ✅ Covers fundamentals → production → real-world gaps
-> ✅ Exercises included for **active learning**
-> ✅ Optimized for interviews + real systems
-
----
+# 📘 System Design – Complete Study Plan 
 
 ## Phase 0: Foundations & Design Thinking
 

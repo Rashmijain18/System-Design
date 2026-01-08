@@ -371,3 +371,45 @@ Distributed systems enable modern scale, but introduce complexity that must be c
 - Distributed systems → _How large systems are built_
 
 ---
+What is a Load Balancer?
+A load balancer is a device or software that distributes incoming network traffic across multiple servers or resources. This ensures no single server gets overwhelmed, improves availability, reliability, and scalability of applications or services.
+Think of it like a traffic cop that directs client requests to multiple backend servers to balance the load.
+Why Use a Load Balancer?
+High availability: If one server goes down, traffic is redirected to others.
+Improved performance: Distributes workload evenly, reducing response time.
+Scalability: Easily add/remove servers without downtime.
+Fault tolerance: Detects unhealthy servers and stops sending traffic to them.
+Types of Load Balancers
+Load balancers can be broadly classified based on where and how they operate:
+1. Layer 4 Load Balancer (Transport Layer)
+Works at the TCP/UDP level.
+Routes traffic based on IP address and TCP/UDP ports.
+Doesn't look into the actual content of the message.
+Faster and simpler but less flexible.
+Example: IP Hash, Round Robin based on TCP connection.
+2. Layer 7 Load Balancer (Application Layer)
+Works at the HTTP/HTTPS level.
+Can make routing decisions based on content like URL, HTTP headers, cookies, etc.
+Supports advanced routing features like URL-based routing, SSL termination.
+Example: Reverse proxy, Application Delivery Controllers.
+Types Based on Deployment
+Hardware Load Balancers
+Physical devices (e.g., F5 Big-IP, Cisco).
+High performance, used in large enterprise setups.
+Expensive and require maintenance.
+Software Load Balancers
+Run on standard servers or cloud.
+Examples: HAProxy, NGINX, Traefik, Envoy.
+Flexible and cost-effective.
+Cloud Load Balancers
+Managed services by cloud providers.
+Examples:
+AWS Elastic Load Balancer (ELB)
+Google Cloud Load Balancer
+Azure Load Balancer
+Auto-scaling, highly available, integrated with cloud ecosystem.
+Common Load Balancing Algorithms
+Round Robin: Distribute requests sequentially.
+Least Connections: Send request to the server with least active connections.
+IP Hash: Use client IP to decide server (sticky sessions).
+Weighted Round Robin: Assign weights to servers for uneven load distribution.
