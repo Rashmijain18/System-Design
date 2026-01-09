@@ -1,4 +1,4 @@
-# 📘 System Design – Complete Study Plan 
+# 📘 System Design – Complete Study Plan
 
 ## Phase 0: Foundations & Design Thinking
 
@@ -31,7 +31,7 @@
       _Exercise:_ Trace an HTTP request and identify latency sources.
 
 - [ ] **Load balancing & proxies**
-      _Concepts:_ L4 vs L7, sticky sessions, health checks
+      _Concepts:_ L4 vs L7, sticky sessions, health checks, reverse proxy
       _Exercise:_ Design a global load-balancing strategy.
 
 - [ ] **API gateway & service mesh**
