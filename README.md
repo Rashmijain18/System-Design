@@ -4,19 +4,19 @@
 
 > Goal: Learn how to think like a system designer
 
-- [ ] **High-level principles**
+- [x] **High-level principles**
       _Concepts:_ scalability, availability, reliability, fault tolerance, latency vs throughput
       _Exercise:_ Explain trade-offs for a **read-heavy vs write-heavy** system.
 
-- [ ] **Requirement gathering & design process**
+- [x] **Requirement gathering & design process**
       _Concepts:_ functional vs non-functional, constraints, SLA / SLI / SLO
       _Exercise:_ Write requirements for a **URL shortener**.
 
-- [ ] **Design documentation & communication**
+- [x] **Design documentation & communication**
       _Concepts:_ design docs, diagrams, ADRs, reviews
       _Exercise:_ Write a **1-page design doc** for a notification system.
 
-- [ ] **User experience in distributed systems**
+- [x] **User experience in distributed systems**
       _Concepts:_ latency perception, errors, graceful degradation
       _Exercise:_ Design UX behavior when a dependency is slow or down.
 
@@ -30,7 +30,7 @@
       _Concepts:_ TCP/IP, DNS, HTTP/HTTPS, TLS, TCP vs UDP, NAT, proxies
       _Exercise:_ Trace an HTTP request and identify latency sources.
 
-- [ ] **Load balancing & proxies**
+- [x] **Load balancing & proxies**
       _Concepts:_ L4 vs L7, sticky sessions, health checks,
       _Exercise:_ Design a global load-balancing strategy.
 
