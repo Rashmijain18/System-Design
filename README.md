@@ -31,8 +31,14 @@
       _Exercise:_ Trace an HTTP request and identify latency sources.
 
 - [ ] **Load balancing & proxies**
-      _Concepts:_ L4 vs L7, sticky sessions, health checks, reverse proxy
+      _Concepts:_ L4 vs L7, sticky sessions, health checks,
       _Exercise:_ Design a global load-balancing strategy.
+
+- [ ] **Azure service bus, Azure function,scheduler,task schedular**
+      _Concepts:_ Azure service bus
+      _Exercise:_ Implement azure service bus
+
+-[ ] **Reverse proxy, forward proxy**
 
 - [ ] **API gateway & service mesh**
       _Concepts:_ centralized auth, retries, traffic shaping
